@@ -99,6 +99,11 @@
     [super dealloc];
 }
 
+- (MenuItem *)menuItem
+{
+	return menuItem;
+}
+
 - (void)setMenuItem:(MenuItem *)item;
 {
 	[item retain];

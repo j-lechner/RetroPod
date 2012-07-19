@@ -56,6 +56,11 @@
     [super dealloc];
 }
 
+- (Status)status
+{
+	return status;
+}
+
 - (void)setStatus:(Status)s
 {
 	status = s;

@@ -260,6 +260,11 @@
 	}
 }
 
+- (PlayerState)state
+{
+	return state;
+}
+
 - (void)setState:(PlayerState)s;
 {
 	state = s;
@@ -281,6 +286,11 @@
 	}
 	
 	[self setNeedsDisplay];
+}
+
+- (double)progress
+{
+	return progress;
 }
 
 - (void)setProgress:(double)p;

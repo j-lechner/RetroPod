@@ -115,6 +115,11 @@
     [super dealloc];
 }
 
+- (UIDeviceBatteryState)batteryState
+{
+	return batteryState;
+}
+
 - (void)setBatteryState:(UIDeviceBatteryState)state;
 {
 	batteryState = state;
@@ -133,6 +138,11 @@
 	}
 	
 	[self setNeedsDisplay];
+}
+
+- (double)batteryLevel
+{
+	return batteryLevel;
 }
 
 - (void)setBatteryLevel:(double)level;

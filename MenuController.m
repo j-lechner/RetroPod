@@ -156,6 +156,11 @@
 	return [parentController didReleaseButton:button];
 }
 
+- (Menu*)menu
+{
+	return menu;
+}
+
 - (void)setMenu:(Menu *)m;
 {
 	[m retain];
@@ -204,6 +209,11 @@
 	}
 	
 	menuView.menu = m;
+}
+
+- (MPMediaItem*)currentItem
+{
+	return currentItem;
 }
 
 - (void)setCurrentItem:(MPMediaItem *)item;

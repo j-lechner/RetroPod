@@ -143,6 +143,11 @@
 	}
 }
 
+- (StatusView*)statusView
+{
+	return statusView;
+}
+
 - (void)setStatusView:(StatusView *)view;
 {
 	statusView = view;
@@ -565,6 +570,11 @@
 			[self playPauseToogle];
 			break;
 		}
+		default:
+		{
+			
+		}
+			break;
 	}
 	
 	return [parentController didReleaseButton:button];

@@ -25,6 +25,11 @@
 	}
 }
 
+- (BOOL)showsLastItem
+{
+	return showsLastItem;
+}
+
 - (void)setShowsLastItem:(BOOL)li;
 {
 	if(showsLastItem && !li)

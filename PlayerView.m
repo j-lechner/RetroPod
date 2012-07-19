@@ -124,6 +124,11 @@
 	[super dealloc];
 }
 
+- (PlayerState)state
+{
+	return state;
+}
+
 - (void)setState:(PlayerState)s;
 {
 	PlayerState previousState = state;
@@ -171,6 +176,11 @@
 	[UIView commitAnimations];
 }
 
+- (PlayerRepeatState)repeatState
+{
+	return repeatState;
+}
+
 - (void)setRepeatState:(PlayerRepeatState)s;
 {
 	if(PlayerRepeatOne == s)
@@ -186,6 +196,11 @@
 		repeatImageView.image = nil;
 	}
 	repeatState = s;
+}
+
+- (PlayerShuffleState)shuffleState
+{
+	return shuffleState;
 }
 
 - (void)setShuffleState:(PlayerShuffleState)s;

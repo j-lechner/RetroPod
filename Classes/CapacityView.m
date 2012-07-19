@@ -77,6 +77,11 @@
 	[super dealloc];
 }
 
+- (NSString*)capacity
+{
+	return capacity;
+}
+
 - (void)setCapacity:(NSString *)c
 {
 	[c retain];

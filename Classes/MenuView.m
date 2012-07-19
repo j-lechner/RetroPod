@@ -117,6 +117,11 @@
 	[self setNeedsDisplay];
 }
 
+- (Menu *)menu
+{
+	return menu;
+}
+
 - (void)setMenu:(Menu *)m;
 {
 	[m retain];

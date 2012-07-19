@@ -40,11 +40,6 @@
 	[super dealloc];
 }
 
-- (NSArray *)menuItems;
-{
-	return menuItems;
-}
-
 - (NSArray *)visibleMenuItems;
 {
 	NSUInteger scrollSize = [self.menuItems count];
