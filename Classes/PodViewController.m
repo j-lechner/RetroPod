@@ -155,6 +155,13 @@
 	{
 		[self pushContent:player animate:NO];
 	}
+	
+	//Prevent volume overlay from appearing
+	//See: http://stackoverflow.com/questions/3845222/iphone-sdk-how-to-disable-the-volume-indicator-view-if-the-hardware-buttons-ar
+	MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:
+							 CGRectMake(0, 0, 1, 1)] autorelease];
+	[self.view addSubview:volumeView]; 
+	[self.view sendSubviewToBack:volumeView];
 }
 
 /*
