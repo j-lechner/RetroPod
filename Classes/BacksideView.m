@@ -8,7 +8,19 @@
 
 #import "BacksideView.h"
 
+#import "CaptureSessionManager.h"
+
+@interface BacksideView ()
+
+@property (nonatomic,retain) CaptureSessionManager *captureSessionManager;
+
+@property (assign,readwrite) BOOL showsLiveVideo;
+
+@end
+
 @implementation BacksideView
+
+@synthesize captureSessionManager;
 
 @synthesize delegate;
 
@@ -16,6 +28,36 @@
 @synthesize mirrorImageView;
 @synthesize overlayButton;
 @synthesize capacityView;
+
+@synthesize showsLiveVideo;
+
+/**
+ Adds live video if a front camera is available
+ 
+ @return BOOL front camera is available
+ */
+- (BOOL)addLiveVideoLayer
+{
+	self.captureSessionManager = [[[CaptureSessionManager alloc] init] autorelease];
+	
+	if(![self.captureSessionManager addVideoInput])
+	{
+		self.captureSessionManager = nil;
+		return NO;
+	}
+
+	[self.captureSessionManager addVideoPreviewLayer];
+	CGRect layerRect = [[self layer] bounds];
+	[[self.captureSessionManager previewLayer] setBounds:layerRect];
+	[[self.captureSessionManager previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),
+																  CGRectGetMidY(layerRect))];
+	AVCaptureVideoPreviewLayer *layerPreview = [self.captureSessionManager previewLayer];
+	[[self layer] addSublayer:layerPreview];
+	
+	[[self.captureSessionManager captureSession] startRunning];
+	
+	return YES;
+}
 
 - (id)initWithFrame:(CGRect)frame {
     if (!(self = [super initWithFrame:frame]))
@@ -27,16 +69,21 @@
 	self.backgroundColor = [UIColor whiteColor];
 	self.opaque = NO;
 	
-	mirrorImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,
-																	0.0,
-																	frame.size.width,
-																	frame.size.height)];
-	mirrorImageView.opaque = NO;
-	mirrorImageView.backgroundColor = [UIColor clearColor];
-	mirrorImageView.contentMode = UIViewContentModeScaleAspectFill;
-//	mirrorImageView.transform = CGAffineTransformIdentity;
-//	mirrorImageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
-	[self addSubview:mirrorImageView];
+	self.showsLiveVideo = [self addLiveVideoLayer];
+	if(!self.showsLiveVideo)
+	{
+		mirrorImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,
+																		0.0,
+																		frame.size.width,
+																		frame.size.height)];
+		mirrorImageView.opaque = NO;
+		mirrorImageView.backgroundColor = [UIColor clearColor];
+		mirrorImageView.contentMode = UIViewContentModeScaleAspectFill;
+		//	mirrorImageView.transform = CGAffineTransformIdentity;
+		//	mirrorImageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+		[self addSubview:mirrorImageView];
+	}
+	
 
 	maskImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,
 																  0.0,
@@ -127,6 +174,8 @@
 	
 - (void)dealloc
 {
+	self.captureSessionManager = nil;
+	
 	[mirrorImageView release];
 	[maskImageView release];
 	

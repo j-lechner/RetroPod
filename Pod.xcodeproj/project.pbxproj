@@ -59,6 +59,7 @@
 		9ACD18D71038CF930014F3F4 /* Clicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD18D61038CF930014F3F4 /* Clicker.m */; };
 		9ACDFF7810001824008562CF /* CapacityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDFF7710001824008562CF /* CapacityView.m */; };
 		9AE6D3EC15B7F29900F52ADE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6D3EB15B7F29800F52ADE /* Default@2x.png */; };
+		9AE6D3F015B7F3B500F52ADE /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6D3EF15B7F3B500F52ADE /* CaptureSessionManager.m */; };
 		9AEE869B1007D346008A3D64 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEE869A1007D346008A3D64 /* MainMenu.m */; };
 		9AEE86DA1007DA74008A3D64 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEE86D91007DA74008A3D64 /* Settings.m */; };
 		9AEE87701007ECFD008A3D64 /* Playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AEE876C1007ECFD008A3D64 /* Playing.png */; };
@@ -164,6 +165,8 @@
 		9ACDFF7610001824008562CF /* CapacityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapacityView.h; sourceTree = "<group>"; };
 		9ACDFF7710001824008562CF /* CapacityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapacityView.m; sourceTree = "<group>"; };
 		9AE6D3EB15B7F29800F52ADE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9AE6D3EE15B7F3B500F52ADE /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureSessionManager.h; path = External/CaptureSessionManager/CaptureSessionManager.h; sourceTree = SOURCE_ROOT; };
+		9AE6D3EF15B7F3B500F52ADE /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureSessionManager.m; path = External/CaptureSessionManager/CaptureSessionManager.m; sourceTree = SOURCE_ROOT; };
 		9AEE86991007D346008A3D64 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		9AEE869A1007D346008A3D64 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		9AEE86D81007DA74008A3D64 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 		9ACDFF7510001809008562CF /* Back Side */ = {
 			isa = PBXGroup;
 			children = (
+				9AE6D3ED15B7F38E00F52ADE /* CaptureSessionManager */,
 				9A69B1431000014B00F6073F /* BackSideController.h */,
 				9A69B1441000014B00F6073F /* BackSideController.m */,
 				9ACDFF7610001824008562CF /* CapacityView.h */,
@@ -395,6 +399,15 @@
 			);
 			name = "Back Side";
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		9AE6D3ED15B7F38E00F52ADE /* CaptureSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				9AE6D3EE15B7F3B500F52ADE /* CaptureSessionManager.h */,
+				9AE6D3EF15B7F3B500F52ADE /* CaptureSessionManager.m */,
+			);
+			name = CaptureSessionManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +543,7 @@
 				9AEE86DA1007DA74008A3D64 /* Settings.m in Sources */,
 				9AF88F4F101B9F8400F67D3C /* MediaAllSelectorMenuItem.m in Sources */,
 				9ACD18D71038CF930014F3F4 /* Clicker.m in Sources */,
+				9AE6D3F015B7F3B500F52ADE /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,6 +33,7 @@
 @property (readonly) UIImageView *mirrorImageView;
 @property (readonly) UIButton *overlayButton;
 @property (readonly) CapacityView *capacityView;
+@property (assign,readonly) BOOL showsLiveVideo;
 
 @end
 

@@ -75,8 +75,11 @@
 	backsideView.capacityView.capacity = [NSString stringWithFormat:@"%dGB",
 										  (int)pow(2,minDiffIndex)];
 	
-	[backsideView.overlayButton addTarget:self action:@selector(takePicture:) 
-							forControlEvents:UIControlEventTouchDown];
+	if(!backsideView.showsLiveVideo)
+	{
+		[backsideView.overlayButton addTarget:self action:@selector(takePicture:) 
+							 forControlEvents:UIControlEventTouchDown];
+	}	
 	
 	return self;
 }
