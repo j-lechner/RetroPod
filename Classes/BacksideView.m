@@ -87,7 +87,7 @@
 						   @"Simulated by Fudgy Software in Bavaria",
 						   @"Model No.: F1000 Version No.: 1.0 Revision No.: ",
 						   (b != nil) ? [b substringFromIndex:4] : @"1",
-						   @"© 2010 Fudgy Software, Johannes Lechner"];
+						   @"© 2012 Johannes Lechner"];
 	copyrightLabel.font = [UIFont fontWithName:@"Helvetica" size:10.0];
 	copyrightLabel.textColor = [UIColor whiteColor];
 	copyrightLabel.textAlignment = UITextAlignmentCenter;
