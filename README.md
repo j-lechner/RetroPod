@@ -3,11 +3,11 @@ RetroPod - The original iPod, on your iPhone
 
 ![RetroPod](http://retropod.de/img/screens/02.png)
 
-**RetroPod is simulation of the original iPod for iPhone and iPod touch originated by Johannes Lechner.**  
+**RetroPod is a simulation of the original iPod for iPhone and iPod touch originated by Johannes Lechner.**  
 It was crafted with much love and care for details and is now available under the GPL.
 
-Official Website: [http://RetroPod.de](http://RetroPod.de) 
-Backstory:  
+Official Website: [http://RetroPod.de](http://RetroPod.de)  
+Backstory:   
 Contact: Hello __at__ RetroPod.de 
 
 Installation
@@ -43,12 +43,12 @@ This class integrates all the pieces (which are explained later on).
 First, a stack of `Content` is maintained, similar to the `UIViewController` stack managed by a `UINavigationController`:   
      - (void)pushContent:(Content *)content animate:(BOOL)a;  
      - (void)popContentAnimate:(BOOL)a toRoot:(BOOL)r;   
-`PodViewController` is responsible for presenting the right `Controller` based on `Content` subclass passed.
+`PodViewController` is responsible for presenting the right `Controller` based on the `Content` subclass passed.
 
 Second, it dispatches `ScollWheelView` events (e.g. Prev, Next, etc.) to the currently active controller.
 
 Third, it creates a `Menu` instance for the main menu with `MenuItems`, which in turn can also contain `Menus`.
-It then pushes a `PodController` responsible for displaying this main menu on the stack.
+It then pushes a `MenuController` responsible for displaying this main menu on the stack.
 
 Model
 -----
