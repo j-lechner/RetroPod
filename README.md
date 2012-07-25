@@ -1,12 +1,14 @@
 RetroPod - The original iPod, on your iPhone
 ========================================
 
-RetroPod is simulation of the original iPod for iPhone and iPod touch.  
+![RetroPod](http://retropod.de/img/screens/02.png)
+
+**RetroPod is simulation of the original iPod for iPhone and iPod touch originated by Johannes Lechner.**  
 It was crafted with much love and care for details and is now available under the GPL.
 
-Official Website: [http://RetroPod.de](http://RetroPod.de)
-Backstory: 
-Contact: Hello __at__ RetroPod.de
+Official Website: [http://RetroPod.de](http://RetroPod.de) 
+Backstory:  
+Contact: Hello __at__ RetroPod.de 
 
 Installation
 ------------
@@ -16,7 +18,7 @@ Features
 --------
 
 * Navigate your songs by album, artist, genre and more
-* Fast forward/rewind and skimming 
+* Fast forward/rewind and skimming
 * Working battery indicator
 * Backside with custom engraving and real-time mirror
 
@@ -25,7 +27,7 @@ Hacking Ideas
 
 * Recreate the Breakout Game
 * Add an about screen
-* Integrate with MPNowPlayingInfoCenter, i.e. have the RetroPod app icon showing in the multitasking UI. 
+* Integrate with MPNowPlayingInfoCenter, i.e. have the RetroPod app icon showing in the multitasking UI.
 * Allow browsing of your contacts
 * Recreate the calendar
 
@@ -62,7 +64,7 @@ Controller
 
 Current subclasses are `PlayerController` (responsible for controlling music playback and playlist management via `MPMusicPlayerController`) and `MenuController` (responsible for coordinating the rendering of `Menus` and executing the `Actions` assigned to the `MenuItems`).
 
-Each `PodController` can have a `parentController` to which it can forward events it can't process. 
+Each `PodController` can have a `parentController` to which it can forward events it can't process.
 This for example allows the Play/Pause button to function (which is implemented in `PlayerController`), even when a `MenuController` is currently displayed:
 The `MenuController` receives the event, decices that it can't do anything useful with it and then forwards it to its parent.
 
@@ -75,7 +77,7 @@ Further it contains `DisplayView`, which is responsible for animating in the `Co
 
 Action
 ------
-There can be an `Action` attached to an `MenuItem`.	
+There can be an `Action` attached to an `MenuItem`.    
 For example a `SettingsAction` is responsible for changing preferences accordingly.
 
 Back Side
