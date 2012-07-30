@@ -6,9 +6,9 @@ RetroPod - The original iPod, on your iPhone
 **RetroPod is a simulation of the original iPod for iPhone and iPod touch originated by Johannes Lechner.**  
 It was crafted with much love and care for details and is now available under the GPL.
 
-Official Website: [http://RetroPod.de](http://RetroPod.de)  
-Backstory:   
-Contact: Hello __at__ RetroPod.de 
+[Official Website](http://RetroPod.de)   
+[Backstory](http://fudgy.de/2012/07/retropod/)   
+[Contact](mailto:Hello__at__RetroPod.de)
 
 Installation
 ------------
